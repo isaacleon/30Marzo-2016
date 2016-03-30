@@ -27,4 +27,7 @@ grumamult $type
 tendencia3 <- grumamult$trend
 estac3 <- grumamult$seasonal
 alea3<- grumamult$random
-ts.plot (cbind(tendencia3, tendencia3*estac3), lty=6:15,col=c(32,"deepskyblue"))
+ts.plot (cbind(tendencia3, tendencia3*estac3), lty=6:15,col=c(32,"deepskyblue") main="Gruma")
+require (XLConnect)
+library (XLConnect)
+x <- loadworkbook ("C:\\Users\\SALA-C22\\Documents\\gruma.xls,create=TRUE")
