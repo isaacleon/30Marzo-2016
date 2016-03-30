@@ -1,0 +1,30 @@
+ICA <- ts(read.csv(("C:\\Users\\SALA-C22\\Downloads\\table.csv"), header=T), frequency = 252, start = 2000)
+ICA
+plot (decompose(ICA))
+ICA2 <- decompose (ICA)
+icamult <- decompose (ICA, type="mult")
+plot(icamult)
+names(ICA2)
+ICA2 $type
+tendencia <- ICA2$trend
+estac <- ICA2$seasonal
+alea<- ICA2$random
+ts.plot (cbind(tendencia, tendencia*estac), lty=6:15, col=c(32,"deepskyblue"))
+
+##########################################################################################
+
+gruma <- ts(read.csv(("C:\\Users\\SALA-C22\\Downloads\\table2.csv"), header=T), frequency = 252, start = 2000)
+plot(gruma)
+gruma2 <- decompose(gruma)
+grumamult <- decompose (gruma, type="mult")
+names(gruma2)
+gruma2 $type
+tendencia2 <- gruma2$trend
+estac2 <- gruma2$seasonal
+alea2<- gruma2$random
+ts.plot (cbind(tendencia2, tendencia2*estac2), lty=6:15, col=c(32,"deepskyblue"))
+grumamult $type
+tendencia3 <- grumamult$trend
+estac3 <- grumamult$seasonal
+alea3<- grumamult$random
+ts.plot (cbind(tendencia3, tendencia3*estac3), lty=6:15,col=c(32,"deepskyblue"))
